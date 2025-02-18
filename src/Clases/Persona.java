@@ -11,10 +11,6 @@ public class Persona {
     private String apellidos;
     private String email;
     
-    public String toString() {
-        return "hola";
-    }
-
     public Persona() {
     }
 
@@ -25,4 +21,11 @@ public class Persona {
         this.email = email;
     }
     
+    public String toString() {
+        System.out.println("ID: " + ID);
+        System.out.println("nombre: " + nombres);
+        System.out.println("apellido: " + apellidos);
+        System.out.println("email: " + email);
+        return "hola";
+    }
 }
