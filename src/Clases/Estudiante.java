@@ -16,16 +16,16 @@ public class Estudiante extends Persona{
     public Estudiante() {
     }
 
-    public Estudiante(double codigo, boolean activo, double promedio, double ID, String nombres, String apellidos, String email, double IDPrograma, String nombrePrograma, double duracionPrograma, String registroPrograma, Facultad facultad) {
+    public Estudiante(double codigo, boolean activo, double promedio, double ID, String nombres, String apellidos, String email, Programa programa) {
         super(ID, nombres, apellidos, email);
         this.codigo = codigo;
-        this.programa = new Programa(IDPrograma, nombrePrograma, duracionPrograma, registroPrograma, facultad);
         this.activo = activo;
         this.promedio = promedio;
+        this.programa = programa;
     }
     
     public String toString(){
-        System.out.println("datos: " + this.toString());
+        //System.out.println("datos: ");
         System.out.println("codigo: " + codigo);
         System.out.println("programa: " + programa);
         System.out.println("activo: " + activo);
