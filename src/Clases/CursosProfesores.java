@@ -27,16 +27,12 @@ public class CursosProfesores implements Servicios {
     public void cargarDatos() {
         try (BufferedReader reader = new BufferedReader(new FileReader("cursos_profesores.txt"))) {
             String linea;
-            //System.out.println("Cargando datos de cursos asignados a profesores:");
             while ((linea = reader.readLine()) != null) {
-                //System.out.println(linea);
             }
         } catch (IOException e) {
-            //e.printStackTrace();
         }
     }
 
-    // Implementación de los métodos de Servicios
 
     @Override
     public String imprimirPosicion(int posicion) {

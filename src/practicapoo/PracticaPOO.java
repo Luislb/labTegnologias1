@@ -49,12 +49,11 @@ public class PracticaPOO {
         System.out.println("Lista de personas inscritas:");
         System.out.println(inscripciones.imprimirListado());
 
-        // Cantidad actual de inscritos
         System.out.println("Cantidad de inscritos: " + inscripciones.cantidadActual());
 
-        // Obtener información de una posición específica
+
         System.out.println("Persona en posición 1: " + inscripciones.imprimirPosicion(1));
-        // Inscripciones de estudiantes en cursos
+
         cursosInscritos.inscribir(new Inscripcion(cursos.get(0), 2025, 1, estudiantes.get(0)));
         cursosInscritos.inscribir(new Inscripcion(cursos.get(1), 2025, 1, estudiantes.get(1)));
         cursosInscritos.inscribir(new Inscripcion(cursos.get(2), 2025, 1, estudiantes.get(2)));
@@ -62,23 +61,18 @@ public class PracticaPOO {
         System.out.println("Lista de Cursos inscritos:");
         System.out.println(cursosInscritos.imprimirListado());
 
-        // Cantidad actual de inscritos
         System.out.println("Cantidad de inscritos: " + cursosInscritos.cantidadActual());
 
-        // Obtener información de una posición específica
         System.out.println("Persona en posición 1: " + cursosInscritos.imprimirPosicion(1));
         
-        // Asignaciones de profesores a cursos
         cursosProfesores.inscribir(new CursoProfesor(profesores.get(0), 2025, 3, cursos.get(0)));
         cursosProfesores.inscribir(new CursoProfesor(profesores.get(1), 2025, 1, cursos.get(1)));
         
         System.out.println("Lista de cursos de profesores inscritas:");
         System.out.println(cursosProfesores.imprimirListado());
 
-        // Cantidad actual de inscritos
         System.out.println("Cantidad de inscritos: " + cursosProfesores.cantidadActual());
 
-        // Obtener información de una posición específica
         System.out.println("Persona en posición 1: " + cursosProfesores.imprimirPosicion(0));
     }
 }

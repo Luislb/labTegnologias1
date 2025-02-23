@@ -43,16 +43,12 @@ public class CursosInscritos implements Servicios {
     public void cargarDatos() {
         try (BufferedReader reader = new BufferedReader(new FileReader("cursos_inscritos.txt"))) {
             String linea;
-            //System.out.println("Cargando datos de estudiantes inscritos en cursos:");
             while ((linea = reader.readLine()) != null) {
-                //System.out.println(linea);
             }
         } catch (IOException e) {
-            //e.printStackTrace();
         }
     }
 
-    // Implementación de los métodos de Servicios
 
     @Override
     public String imprimirPosicion(int posicion) {
