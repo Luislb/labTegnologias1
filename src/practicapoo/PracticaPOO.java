@@ -42,10 +42,9 @@ public class PracticaPOO {
         profesores.add(new Profesor(101, "Luis", "Martínez", "luis@example.com", "Tiempo Completo"));
         profesores.add(new Profesor(102, "Ana", "Fernández", "ana@example.com", "Cátedra"));
 
-        inscripciones.inscribir(new Inscripcion(cursos.get(0), 2025, 1, estudiantes.get(0)));
-        inscripciones.inscribir(new Inscripcion(cursos.get(1), 2025, 1, estudiantes.get(1)));
-        inscripciones.inscribir(new Inscripcion(cursos.get(2), 2025, 1, estudiantes.get(2)));
-        inscripciones.inscribir(new Inscripcion(cursos.get(0), 2025, 1, estudiantes.get(2)));
+        inscripciones.inscribir(estudiantes.get(0));
+        inscripciones.inscribir(estudiantes.get(1));
+        inscripciones.inscribir(estudiantes.get(2));
         
         // Inscripciones de estudiantes en cursos
         cursosInscritos.inscribir(new Inscripcion(cursos.get(0), 2025, 1, estudiantes.get(0)));

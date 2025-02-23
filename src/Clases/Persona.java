@@ -5,7 +5,7 @@ package Clases;
  *
  * @author Estudiante_MCA
  */
-public abstract class Persona {
+public class Persona {
     protected double ID;
     protected String nombres, apellidos, email;
 
@@ -19,4 +19,37 @@ public abstract class Persona {
     public String toString() {
         return ID + ", " + nombres + " " + apellidos + ", " + email;
     }
+
+    public double getID() {
+        return ID;
+    }
+
+    public void setID(double ID) {
+        this.ID = ID;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
 }
