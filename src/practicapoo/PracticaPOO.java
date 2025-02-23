@@ -2,6 +2,9 @@
 package practicapoo;
 import Clases.Persona;
 import Clases.Estudiante;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import Clases.Profesor;
 import Clases.Facultad;
 import Clases.Programa;
@@ -12,10 +15,6 @@ import java.io.*;
 import java.util.*;
 
 public class PracticaPOO {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         escribirEjemplo("estudiantes.txt", "1, Juan Perez, juan@example.com, 1234, Ingenieria, true, 4.5");
         escribirEjemplo("profesores.txt", "1, Maria Gonzalez, maria@example.com, Tiempo Completo");
@@ -30,5 +29,4 @@ public class PracticaPOO {
             e.printStackTrace();
         }
     }
-    
 }

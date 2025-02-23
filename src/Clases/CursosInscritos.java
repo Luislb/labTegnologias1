@@ -1,14 +1,14 @@
 
 package Clases;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  *
  * @author Estudiante_MCA
  */
-public class CursosInscritos {
+class CursosInscritos {
     private List<Inscripcion> listado = new ArrayList<>();
     
     public void inscribirCurso(Inscripcion inscripcion) {

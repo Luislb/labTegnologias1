@@ -5,7 +5,7 @@ import Clases.Persona;
  *
  * @author Estudiante_MCA
  */
-public class Profesor extends Persona {
+public class Profesor extends Persona{
     private String tipoContrato;
     
     public Profesor(double ID, String nombres, String apellidos, String email, String tipoContrato) {
