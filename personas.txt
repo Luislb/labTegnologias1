@@ -1,0 +1,6 @@
+Estudiante,1.0,juan,juan@mail.com,joseeee@mail.com,1001.0,Matemáticas,true,4.5
+Profesor,2.0,Ana,Gómez,ana@mail.com,Tiempo Completo
+Profesor,2.0,maria de los angeles,Gómez,ana@mail.com,Tiempo Completo
+Estudiante,6.0,jose daniel,jose@unillanos.edu.co,juan@mail.com,1.60004632E8,sistemas,false,5.5
+Estudiante,1.0,juan,juan@mail.com,juan@mail.com,1001.0,Ingenieria de Sistemas,true,4.5
+Profesor,2.0,Ana,Gómez,ana@mail.com,Tiempo Completo
