@@ -1,6 +1,7 @@
 
 
 package Clases;
+import Clases.Servicios;
 import java.util.List;
 import java.io.*;
 import java.util.*;
@@ -53,13 +54,31 @@ public class InscripcionesPersonas {
         listado.clear();
         try (BufferedReader reader = new BufferedReader(new FileReader("inscripciones_personas.txt"))) {
             String linea;
-            System.out.println("Cargando datos de inscripciones:");
+            //System.out.println("Cargando datos de inscripciones:");
             while ((linea = reader.readLine()) != null) {
-                System.out.println(linea);
-                // Aquí podrías convertir la línea a un objeto Persona si es necesario.
+                //System.out.println(linea);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
+    }
+
+    public String imprimirPosicion(int posición) {
+        if (posición >= 0 && posición < listado.size()) {
+            return listado.get(posición).toString();  // Suponiendo que Persona tiene un método toString()
+        }
+        return "Posición inválida";
+    }
+
+    public Integer cantidadActual() {
+        return listado.size();
+    }
+
+    public List<String> imprimirListado() {
+        List<String> resultado = new ArrayList<>();
+        for (Persona p : listado) {
+            resultado.add(p.toString() + "\n");  // Suponiendo que Persona tiene un método toString()
+        }
+        return resultado;
     }
 }

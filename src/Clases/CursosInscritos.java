@@ -43,12 +43,12 @@ public class CursosInscritos implements Servicios {
     public void cargarDatos() {
         try (BufferedReader reader = new BufferedReader(new FileReader("cursos_inscritos.txt"))) {
             String linea;
-            System.out.println("Cargando datos de estudiantes inscritos en cursos:");
+            //System.out.println("Cargando datos de estudiantes inscritos en cursos:");
             while ((linea = reader.readLine()) != null) {
-                System.out.println(linea);
+                //System.out.println(linea);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -71,7 +71,7 @@ public class CursosInscritos implements Servicios {
     public List<String> imprimirListado() {
         List<String> lista = new ArrayList<>();
         for (Inscripcion ins : listado) {
-            lista.add(ins.toString());
+            lista.add(ins.toString() + "\n");
         }
         return lista;
     }
