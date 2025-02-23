@@ -18,7 +18,9 @@ public class Curso {
         this.programa = programa;
         this.activo = activo;
     }
-    
+    public int getID() {
+        return ID;
+    }
     public String toString() {
         return ID + ", " + nombre + ", " + programa.getNombre() + ", " + activo;
     }

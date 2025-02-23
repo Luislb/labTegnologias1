@@ -5,7 +5,7 @@ package Clases;
  *
  * @author Estudiante_MCA
  */
-class CursoProfesor {
+public class CursoProfesor {
     private Profesor profesor;
     private int anio, semestre;
     private Curso curso;

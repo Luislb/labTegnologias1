@@ -5,7 +5,7 @@ package Clases;
  *
  * @author Estudiante_MCA
  */
-public class Persona {
+public abstract class Persona {
     protected double ID;
     protected String nombres, apellidos, email;
 

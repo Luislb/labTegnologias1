@@ -16,7 +16,11 @@ public class Facultad {
         this.decano = decano;
     }
     
+    public void asignarDecano(Persona decano) {
+        this.decano = decano;
+    }
+    
     public String toString() {
-        return ID + ", " + nombre + ", Decano: " + decano.toString();
+        return ID + ", " + nombre + ", Decano: " + (decano != null ? decano.toString() : "No asignado");
     }
 }

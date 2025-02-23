@@ -15,7 +15,12 @@ public class Inscripcion {
         this.semestre = semestre;
         this.estudiante = estudiante;
     }
-    
+    public Curso getCurso() {
+        return curso;
+    }
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
     public String toString() {
         return curso.toString() + ", " + anio + ", " + semestre + ", " + estudiante.toString();
     }

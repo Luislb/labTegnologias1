@@ -1,0 +1,4 @@
+101.0, Luis Martínez, luis@example.com, Tiempo Completo, 2025, 1, 1, Programación, Ingeniería, true
+102.0, Ana Fernández, ana@example.com, Cátedra, 2025, 1, 2, Estructuras de Datos, Ingeniería, true
+101.0, Luis Martínez, luis@example.com, Tiempo Completo, 2025, 1, 1, Programación, Ingeniería, true
+102.0, Ana Fernández, ana@example.com, Cátedra, 2025, 1, 2, Estructuras de Datos, Ingeniería, true
