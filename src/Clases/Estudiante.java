@@ -23,4 +23,37 @@ public class Estudiante extends Persona {
     public String toString() {
         return super.toString() + ", " + codigo + ", " + programa.getNombre() + ", " + activo + ", " + promedio;
     }
+
+    public double getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(double codigo) {
+        this.codigo = codigo;
+    }
+
+    public double getPromedio() {
+        return promedio;
+    }
+
+    public void setPromedio(double promedio) {
+        this.promedio = promedio;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+    public Programa getPrograma() {
+        return programa;
+    }
+
+    public void setPrograma(Programa programa) {
+        this.programa = programa;
+    }
+    
 }

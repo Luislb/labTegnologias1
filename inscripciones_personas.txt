@@ -1,3 +1,1 @@
-1.0, Juan Pérez, juan@example.com, 1234.0, Ingeniería, true, 4.5
-2.0, María Gómez, maria@example.com, 5678.0, Ingeniería, true, 3.9
-3.0, Carlos López, carlos@example.com, 9101.0, Ingeniería, true, 4.2
+1.0, wdqd qweq, qwqe, 123.0, ing, true, 4.0
