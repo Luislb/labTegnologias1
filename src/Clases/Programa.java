@@ -8,6 +8,10 @@ import java.util.Date;
  * @author Estudiante_MCA
  */
 public class Programa {
+
+    static Programa valueOf(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     private double ID, duracion;
     private String nombre;
     private Date registro;

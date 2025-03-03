@@ -1,0 +1,5 @@
+Estudiante,1.0,Mayckoll Stheven,Vargas Rodriguez,msvargas@gmail.com,1.60004612E8,ingeniería de sistemas,true,4.0
+Estudiante,2.0,Luis Alejandro,Blanco Serrano,lbs@gmail.com,1.60004632E8,ingeniería de sistemas,true,5.0
+Estudiante,3.0,vivian,prado,vprado@gmail.com,1.60004623E8,ingeniería de sistemas,true,1.0
+Profesor,1.0,marco,solis,msolis@unillanos.edu.co,definido
+Profesor,3.0,alejandro,solis,Asolis@unillanos.edu.co,tiempo completo

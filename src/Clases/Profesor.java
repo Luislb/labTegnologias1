@@ -16,4 +16,13 @@ public class Profesor extends Persona{
     public String toString() {
         return super.toString() + ", " + tipoContrato;
     }
+
+    public String getTipoContrato() {
+        return tipoContrato;
+    }
+
+    public void setTipoContrato(String tipoContrato) {
+        this.tipoContrato = tipoContrato;
+    }
+    
 }
