@@ -21,7 +21,17 @@ public class Curso {
     public int getID() {
         return ID;
     }
+    public String getNombre() {
+    return this.nombre;
+}
+public Programa getPrograma() {
+    return this.programa;
+}
     public String toString() {
         return ID + ", " + nombre + ", " + programa.getNombre() + ", " + activo;
     }
+    public boolean isActivo() {
+    return activo;
+}
+
 }

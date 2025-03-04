@@ -6,9 +6,18 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class CursosProfesores implements Servicios {
     private List<CursoProfesor> listado = new ArrayList<>();
+    private Connection connection;
+    
+    public CursosProfesores(Connection connection) {
+    this.connection = connection;
+}
     
     public void inscribir(CursoProfesor cursoProfesor) {
         listado.add(cursoProfesor);
@@ -32,6 +41,67 @@ public class CursosProfesores implements Servicios {
         } catch (IOException e) {
         }
     }
+    
+    public Profesor buscarProfesorPorID(int idProfesor) {
+    String sql = "SELECT * FROM profesores WHERE ID = ?";
+    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        stmt.setInt(1, idProfesor);
+        ResultSet rs = stmt.executeQuery();
+        
+        if (rs.next()) {
+            return new Profesor(
+                rs.getInt("ID"),
+                rs.getString("Nombres"),
+                rs.getString("Apellidos"),
+                rs.getString("Email"),
+                rs.getString("TipoContrato")
+            );
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return null;
+}
+    
+    public boolean cursoTieneProfesor(int cursoID) {
+    String sql = "SELECT COUNT(*) FROM profesores_cursos WHERE curso_id = ?";
+    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        stmt.setInt(1, cursoID);
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next() && rs.getInt(1) > 0) {
+            return true; 
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return false; 
+}
+    
+    public void inscribirProfesorEnCurso(int profesorID, int cursoID) {
+    String sql = "INSERT INTO profesores_cursos (curso_id, profesor_id) VALUES (?, ?)";
+    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        stmt.setInt(1, cursoID);
+        stmt.setInt(2, profesorID);
+        stmt.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+    
+    public void eliminarInscripcionProfesor(int profesorID, int cursoID) {
+    String sql = "DELETE FROM profesores_cursos WHERE profesor_id = ? AND curso_id = ?";
+    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        stmt.setInt(1, profesorID);
+        stmt.setInt(2, cursoID);
+        stmt.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
+
+
+
 
 
     @Override

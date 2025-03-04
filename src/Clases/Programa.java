@@ -24,6 +24,10 @@ public class Programa {
         this.registro = registro;
         this.facultad = facultad;
     }
+    public Programa(String nombre) {
+    this.nombre = nombre;
+}
+
     
     public String getNombre() {
         return nombre;

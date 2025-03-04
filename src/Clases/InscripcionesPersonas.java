@@ -13,7 +13,7 @@ public class InscripcionesPersonas {
 
     public InscripcionesPersonas() {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://sql3.freesqldatabase.com:3306/sql3765614", "sql3765614", "9R5flvQCdE");
+            connection = DriverManager.getConnection("jdbc:mysql://trolley.proxy.rlwy.net:21639/universidad", "root", "hgJIRkqzGGypoobLFoigLcUFYotBMVTP");
             System.out.println("Conectado a la base de datos.");
             cargarDatos();
         } catch (SQLException e) {
@@ -185,6 +185,30 @@ public class InscripcionesPersonas {
         }
         return null;
     }
+    
+    public Persona buscarEstudiantePorID(long id) {
+    String sql = "SELECT * FROM estudiantes WHERE ID = ?";
+    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+        stmt.setLong(1, id);
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            return new Estudiante(
+                rs.getLong("ID"),  
+                rs.getString("Nombres"),
+                rs.getString("Apellidos"),
+                rs.getString("Email"),
+                rs.getLong("Codigo"), 
+                new Programa(rs.getString("Programa")),  
+                rs.getBoolean("Activo"),
+                rs.getDouble("Promedio")
+            );
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return null;
+}
+
 
     public void cargarDatos() {
         listado.clear();
