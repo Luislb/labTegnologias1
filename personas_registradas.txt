@@ -5,11 +5,9 @@ Estudiante,5.0,pedro,pe,pedrope@unillanos.edu.co,1.60004603E8,Ingeniería de Sis
 Estudiante,6.0,mayckoll,vargas,ms@unillanos.edu.co,1.29492392E16,Ingeniería de Sistemas,false,3.8
 Estudiante,7.0,fasdfsf,vargas,angiep@unillanos.edu.co,1.29492392E16,Ingeniería de Sistemas,true,3.8
 Estudiante,8.0,yo,no se,yono@hotmail.com,1.600046E8,Ingeniería de Sistemas,true,4.0
-Estudiante,9.0,Juan,Cristobal,cris06@gmail.com,1.2345432E7,Ingeniería de Sistemas,true,3.0
 Profesor,1.0,yo tal vez,soy,thb@unillanos.edu.co,tiempo completo 
 Profesor,2.0,yo tal vez,soy,yotalv@unillanos.edu.co,tiempo completo 
 Profesor,5.0,luis,soy,lbs@unillanos.edu.co,tiempo completo
 Profesor,6.0,luis4,soy,lbs3@unillanos.edu.co,tiempo completo
 Profesor,7.0,felipe,agudelo,ajhsdausnd@asdasd,definido
 Profesor,8.0,Carlos,Peña,Peñita@unillanos.edu.co,definido
-Profesor,10.0,yo no,soy,yo@unillanos.edu.co,indefinido

@@ -27,7 +27,7 @@ public class InscripcionesPersonas {
             stmt.setDouble(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                return rs.getInt(1) > 0; // Si el conteo es mayor a 0, significa que el ID ya existe
+                return rs.getInt(1) > 0; 
             }
         } catch (SQLException e) {
             e.printStackTrace();

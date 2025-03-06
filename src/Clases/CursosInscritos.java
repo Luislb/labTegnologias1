@@ -19,9 +19,9 @@ public class CursosInscritos implements Servicios {
     private InscripcionesPersonas inscripciones;
     
     public CursosInscritos(Connection connection, InscripcionesPersonas inscripciones) {
-    this.connection = connection;
-    this.inscripciones = inscripciones;
-}
+        this.connection = connection;
+        this.inscripciones = inscripciones;
+    }
     
     public void inscribir(Inscripcion inscripcion) {
         listado.add(inscripcion);
@@ -62,64 +62,64 @@ public class CursosInscritos implements Servicios {
         }
     }
     
-  public void inscribirCurso(Curso curso) {
-    String checkSql = "SELECT COUNT(*) FROM cursos WHERE ID = ?";
-    String insertSql = "INSERT INTO cursos (ID, Nombre, Programa, Activo) VALUES (?, ?, ?, ?)";
+    public void inscribirCurso(Curso curso) {
+        String checkSql = "SELECT COUNT(*) FROM cursos WHERE ID = ?";
+        String insertSql = "INSERT INTO cursos (ID, Nombre, Programa, Activo) VALUES (?, ?, ?, ?)";
 
-    try {
-        try (PreparedStatement checkStmt = connection.prepareStatement(checkSql)) {
-            checkStmt.setInt(1, curso.getID());
-            try (ResultSet rs = checkStmt.executeQuery()) {
-                if (rs.next() && rs.getInt(1) > 0) {
-                    System.out.println("ID duplicado detectado. Saliendo del método.");
-                    JOptionPane.showMessageDialog(null, "Error: El ID ya existe en la base de datos.", "ID Duplicado", JOptionPane.ERROR_MESSAGE);
-                    return;
+        try {
+            try (PreparedStatement checkStmt = connection.prepareStatement(checkSql)) {
+                checkStmt.setInt(1, curso.getID());
+                try (ResultSet rs = checkStmt.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) {
+                        System.out.println("ID duplicado detectado. Saliendo del método.");
+                        JOptionPane.showMessageDialog(null, "Error: El ID ya existe en la base de datos.", "ID Duplicado", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
                 }
             }
-        }
 
-        System.out.println("ID no duplicado. Procediendo con la inserción.");
+            System.out.println("ID no duplicado. Procediendo con la inserción.");
 
-        try (PreparedStatement stmt = connection.prepareStatement(insertSql)) {
-            stmt.setInt(1, curso.getID());
-            stmt.setString(2, curso.getNombre());
-            stmt.setString(3, curso.getPrograma().getNombre());
-            stmt.setBoolean(4, curso.isActivo());
+            try (PreparedStatement stmt = connection.prepareStatement(insertSql)) {
+                stmt.setInt(1, curso.getID());
+                stmt.setString(2, curso.getNombre());
+                stmt.setString(3, curso.getPrograma().getNombre());
+                stmt.setBoolean(4, curso.isActivo());
 
-            stmt.executeUpdate();
-            System.out.println("Curso insertado en la base de datos.");
-            JOptionPane.showMessageDialog(null, "Curso agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-        }
-
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-}
-  
-  public Curso buscarCursoPorID(int id) {
-    String sql = "SELECT ID, Nombre, Programa, Activo FROM cursos WHERE ID = ?";
-    
-    try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-        stmt.setInt(1, id);
-        try (ResultSet rs = stmt.executeQuery()) {
-            if (rs.next()) {
-              
-                Programa programa = inscripciones.obtenerProgramaPorNombre(rs.getString("Programa"));
-                boolean activo = rs.getBoolean("Activo");
-
-                return new Curso(
-                    rs.getInt("ID"),
-                    rs.getString("Nombre"),
-                    programa,
-                    activo
-                );
+                stmt.executeUpdate();
+                System.out.println("Curso insertado en la base de datos.");
+                JOptionPane.showMessageDialog(null, "Curso agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
     }
-    return null; 
-}
+  
+    public Curso buscarCursoPorID(int id) {
+        String sql = "SELECT ID, Nombre, Programa, Activo FROM cursos WHERE ID = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+
+                    Programa programa = inscripciones.obtenerProgramaPorNombre(rs.getString("Programa"));
+                    boolean activo = rs.getBoolean("Activo");
+
+                    return new Curso(
+                        rs.getInt("ID"),
+                        rs.getString("Nombre"),
+                        programa,
+                        activo
+                    );
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null; 
+    }
   
   public void actualizarCurso(Curso curso) {
     String sql = "UPDATE cursos SET Nombre = ?, Programa = ?, Activo = ? WHERE ID = ?";

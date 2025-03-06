@@ -16,8 +16,8 @@ public class CursosProfesores implements Servicios {
     private Connection connection;
     
     public CursosProfesores(Connection connection) {
-    this.connection = connection;
-}
+        this.connection = connection;
+    }
     
     public void inscribir(CursoProfesor cursoProfesor) {
         listado.add(cursoProfesor);
